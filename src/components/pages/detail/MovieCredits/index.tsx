@@ -14,6 +14,7 @@ export default function MovieCasts() {
   return (
     <section className="mt-16 space-y-9 pb-10">
       <Slider
+        isLoading={isLoading}
         title="Main Casts"
         sliderList={credits?.cast}
         render={(name, desc) => (
@@ -26,6 +27,7 @@ export default function MovieCasts() {
         )}
       />
       <Slider
+        isLoading={isLoading}
         title="Crews"
         sliderList={credits?.crew}
         render={(name, desc) => (

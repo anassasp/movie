@@ -15,7 +15,14 @@ type SliderProps = {
   isLoading: boolean;
 };
 
-export default function Slider({ title, sliderList, render }: SliderProps) {
+const ARRAY_LOADING_ITEMS = Array.from({ length: 6 });
+
+export default function Slider({
+  title,
+  sliderList,
+  render,
+  isLoading,
+}: SliderProps) {
   const [index, setIndex] = useState(0);
 
   const nextSlide = () => {
@@ -25,6 +32,37 @@ export default function Slider({ title, sliderList, render }: SliderProps) {
   const prevSlide = () => {
     if (index > 0) setIndex(index - 1);
   };
+
+  if (isLoading)
+    return (
+      <div>
+        <div className="flex items-center justify-between">
+          <div className="mb-6 h-8 w-40 animate-pulse rounded bg-yellow-300/40" />
+          <div className="flex gap-4">
+            <div className="h-10 w-10 animate-pulse rounded-full bg-gray-300" />
+            <div className="h-10 w-10 animate-pulse rounded-full bg-gray-300" />
+          </div>
+        </div>
+
+        <div className="w-full overflow-hidden px-2">
+          <ul
+            className="flex gap-4 transition-all duration-300"
+            style={{
+              marginLeft: 0,
+              width: `${176 * ARRAY_LOADING_ITEMS.length}px`,
+            }}
+          >
+            {ARRAY_LOADING_ITEMS.map((_, i) => (
+              <li key={i} className="flex-shrink-0">
+                <div className="size-44 animate-pulse rounded-full bg-gray-300" />
+                <div className="mt-2 h-4 w-32 animate-pulse rounded bg-gray-300" />
+                <div className="mt-1 h-3 w-24 animate-pulse rounded bg-gray-200" />
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    );
 
   return (
     <div>
