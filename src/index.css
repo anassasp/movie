@@ -1,0 +1,9 @@
+@import "tailwindcss";
+
+html {
+  font-size: 14px;
+}
+
+.swiper-wrapper {
+  align-items: stretch;
+}
