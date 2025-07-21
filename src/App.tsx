@@ -11,8 +11,8 @@ const Search = lazy(() => import("./pages/Search"));
 export default function App() {
   return (
     <MainLayout>
-      <Routes>
-        <Suspense fallback={<span className="loader" />}>
+      <Suspense fallback={<span className="loader" />}>
+        <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/movie/:id" element={<MovieDetail />} />
           <Route path="/movies/discover" element={<DiscoverMovies />} />
@@ -22,8 +22,8 @@ export default function App() {
           />
           <Route path="/search" element={<Search />} />
           <Route path="*" element={<NotFound />} />
-        </Suspense>
-      </Routes>
+        </Routes>
+      </Suspense>
     </MainLayout>
   );
 }
