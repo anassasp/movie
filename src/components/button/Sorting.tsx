@@ -39,7 +39,10 @@ export default function MovieSorting({ selected, onChange }: Props) {
   }, []);
 
   return (
-    <div ref={dropdownRef} className="relative mb-4 inline-block text-left">
+    <div
+      ref={dropdownRef}
+      className="relative mt-6 mb-4 inline-block text-left"
+    >
       <button
         onClick={() => setIsOpen(!isOpen)}
         className="flex cursor-pointer items-center gap-2 rounded bg-gray-200 px-4 py-2 text-black hover:bg-gray-300 dark:bg-gray-700 dark:text-white dark:hover:bg-gray-600"

@@ -23,7 +23,7 @@ export default function CategorySection({ category }: CategorySectionProps) {
         </h1>
         <Link
           to={`/movies/category/${category}`}
-          className="pr-16 text-yellow-400 underline underline-offset-2 hover:text-yellow-300"
+          className="pr-2 text-yellow-400 underline underline-offset-2 hover:text-yellow-300 sm:pr-16"
         >
           See More
         </Link>
